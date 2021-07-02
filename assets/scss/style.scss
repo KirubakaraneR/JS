@@ -1,0 +1,523 @@
+@import "fonts.scss";
+@import "mixin.scss";
+@import "color.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe-Regular";
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  .header {
+    height: 8vh;
+    background-color: $top-header;
+    .grid-icon {
+      @include top-header-properties;
+      .fa-th {
+        color: $top-header-icon;
+      }
+    }
+    .to-do-title {
+      @include top-header-properties;
+      padding: 15px;
+      span {
+        font-weight: 600;
+        font-size: 15px;
+        color: $top-header-icon;
+      }
+    }
+    .search-bar-div {
+      @include top-header-properties;
+      width: 75%;
+      padding: 8px;
+      .search-bar {
+        background-color: $top-search-bar;
+        width: 35%;
+        margin: auto;
+        border-radius: 2px;
+        .search-icon {
+          display: inline-block;
+          padding: 7px;
+          .fa-search {
+            transform: scaleX(-1);
+            color: $search-icon;
+          }
+        }
+        .textField {
+          display: inline-block;
+          vertical-align: top;
+          margin-top: 1px;
+          width: 75%;
+          border: none;
+          padding: 8px;
+          background-color: $top-search-bar;
+        }
+        .textField:hover {
+          background-color: $top-header-icon;
+        }
+        .textField::placeholder {
+          display: none;
+        }
+      }
+      .search-bar:hover {
+        cursor: pointer;
+        background-color: $top-header-icon;
+      }
+    }
+    .settings-icon {
+      @include top-header-properties;
+      .fa-cog {
+        @include top-header-transparent-properties;
+      }
+    }
+    .question-icon {
+      @include top-header-properties;
+      .fa-question {
+        @include top-header-transparent-properties;
+      }
+    }
+    .megaphone-icon {
+      @include top-header-properties;
+      .fa-bullhorn {
+        @include top-header-transparent-properties;
+      }
+    }
+    .profile-icon {
+      @include top-header-properties;
+      padding: 8px;
+      .fa-user-circle {
+        color: $top-header-icon;
+      }
+    }
+    .grid-icon:hover,
+    .settings-icon:hover,
+    .question-icon:hover,
+    .megaphone-icon:hover,
+    .profile-icon:hover {
+      cursor: pointer;
+      background-color: $top-header-icon-hover;
+    }
+  }
+  .body-container {
+    width: 99.85%;
+    .hide-add-button {
+      display: none;
+    }
+    .navigation-container {
+      display: inline-block;
+      width: 20%;
+      background-color: $navigation-bar;
+      border-right: 1px solid $top-search-bar;
+      height: 91.8vh;
+      .navigation-header {
+        padding: 25px 0 25px 15px;
+        .left-arrow-icon {
+          display: inline;
+          padding: 10px;
+          .fa-chevron-left {
+            font-size: 20px;
+            color: $search-icon;
+            vertical-align: top;
+            margin: -1px 0 0 -2px;
+          }
+        }
+        .left-arrow-icon:hover {
+          cursor: pointer;
+          background-color: $top-header-icon;
+        }
+      }
+      .navBarList {
+        height: 80%;
+        overflow-y: auto;
+        .navigation-menu-list {
+          .task-countvalue {
+            float: right;
+            margin-right: 10px;
+          }
+          .current-menu {
+            background-color: $navBar-footer-hover;
+            font-weight: 800;
+            color: $top-header;
+          }
+          .list-element {
+            padding: 10px 0 10px 17px;
+            .task-count-value {
+              position: absolute;
+              left: 17.5%;
+              font-size: 14px;
+            }
+            .nav-menu-name {
+              display: inline-block;
+              font-size: 14px;
+              padding-left: 14px;
+            }
+            .fa-sun,
+            .fa-star,
+            .fa-calendar,
+            .fa-user,
+            .fa-home {
+              display: inline-block;
+              font-size: 15px;
+            }
+            .fa-star,
+            .fa-calendar,
+            .fa-user {
+              font-size: 13px;
+            }
+            .fa-calendar,
+            .fa-user {
+              margin-right: 2px;
+            }
+            .fa-home {
+              font-size: 12px;
+              margin-left: -1px;
+            }
+            .fa-list {
+              font-size: 12px;
+            }
+          }
+          .list-element:hover {
+            cursor: pointer;
+            background-color: $top-header-icon;
+          }
+        }
+        .input-container {
+          width: 79%;
+          display: inline-block;
+          .plus-icon {
+            display: inline-block;
+            padding: 10px;
+            margin-left: 5px;
+            .fa-plus {
+              @include navBar-transparent-properties;
+              -webkit-text-stroke-color: $top-header;
+            }
+          }
+          .plus-icon:hover {
+            cursor: pointer;
+          }
+          .input-box {
+            display: inline-block;
+            vertical-align: top;
+            width: 77%;
+            .new-nav-menu-input {
+              border: none;
+              background-color: $navigation-bar;
+              height: 41px;
+              width: 100%;
+            }
+            .new-nav-menu-input:focus {
+              outline: 0;
+            }
+            .new-nav-menu-input:hover {
+              background-color: $top-header-icon;
+            }
+            .new-nav-menu-input::placeholder {
+              color: $top-header;
+            }
+          }
+        }
+        .input-container:hover {
+          cursor: pointer;
+          background-color: $top-header-icon;
+        }
+        .new-folder-icon {
+          display: inline-block;
+          vertical-align: top;
+          padding: 10px 16px 10px 16px;
+          .fa-folder-plus {
+            @include navBar-transparent-properties;
+            -webkit-text-stroke-color: $top-header;
+          }
+        }
+        .new-folder-icon:hover {
+          cursor: pointer;
+          background-color: $top-header-icon;
+        }
+      }
+      .navigation-footer {
+        border-top: 1px solid $top-search-bar;
+        .mail-icon {
+          @include navBar-footer;
+        }
+        .calendar-icon {
+          @include navBar-footer;
+          @include navBar-transparent-properties;
+        }
+        .user-friend-icon {
+          @include navBar-footer;
+          .fa-user-friends {
+            @include navBar-transparent-properties;
+          }
+        }
+        .paperclip-icon {
+          @include navBar-footer;
+          .fa-paperclip {
+            transform: rotate(-45deg);
+          }
+        }
+        .tick-icon {
+          @include navBar-footer;
+          .fa-check {
+            @include navBar-transparent-properties;
+            -webkit-text-stroke-color: $top-header;
+          }
+        }
+        .mail-icon:hover,
+        .calendar-icon:hover,
+        .user-friend-icon:hover,
+        .paperclip-icon:hover,
+        .tick-icon:hover {
+          cursor: pointer;
+          background-color: $navBar-footer-hover;
+        }
+      }
+    }
+    .task-container {
+      width: 75%;
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 20px 0 20px;
+      padding-top: 20px;
+      .fa-circle {
+        padding-left: 1px;
+        padding-right: 15px;
+        font-size: 18px;
+      }
+      .menu-head {
+        font-weight: 600;
+        display: inline-block;
+        margin-right: 10px;
+      }
+      .dots-icon {
+        display: inline-block;
+        padding: 7px 6px 5px 7px;
+        .fa-ellipsis-h {
+          font-size: 12px;
+          vertical-align: top;
+          margin: 3px;
+          color: $search-icon;
+        }
+      }
+      .dots-icon:hover {
+        cursor: pointer;
+        background-color: $navBar-footer-hover;
+      }
+      .current-date {
+        font-weight: 400;
+        font-size: 12px;
+      }
+      .task-input-container {
+        border-bottom: 1px solid $top-search-bar;
+        margin-top: 25px;
+        .fa-plus {
+          padding: 4px;
+          margin-right: 10px;
+        }
+        .task-inputbox {
+          height: 45px;
+          width: 92%;
+          border: none;
+          font-size: 14px;
+        }
+        .task-inputbox:focus {
+          outline: 0;
+        }
+        .add-button {
+          display: none;
+          font-family: "Segoe-Regular";
+          font-size: 12px;
+          font-weight: 600;
+          text-align: right;
+        }
+        .add-button-extends {
+          @extend .add-button;
+          display: inline-block;
+        }
+      }
+      .task-list-values {
+        height: 54px;
+        width: 100%;
+        border-bottom: 1px solid $top-search-bar;
+      }
+      .new-task-list {
+        list-style-type: none;
+        overflow: auto;
+        height: 71vh;
+        padding: 0;
+        margin: 0;
+        .new-task-element {
+          padding-top: 16px;
+          padding-bottom: 16px;
+          border-bottom: 1px solid $top-search-bar;
+          font-size: 14px;
+          .task-content {
+            width: 89%;
+            display: inline-block;
+            vertical-align: top;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-right: 20px;
+          }
+          .fa-star {
+            font-size: 13px;
+            margin-right: 5px;
+            display: inline-block;
+          }
+          .fa-check-circle {
+            padding-right: 17px;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+    .null-task {
+      padding-top: 26px;
+      padding-bottom: 26px;
+      border: none;
+      box-shadow: 0px 1px $top-search-bar;
+    }
+    .reduce-width {
+      width: 51.9%;
+    }
+    .subtask-container {
+      overflow: auto;
+      height: 91.5vh;
+      width: 24%;
+      display: none;
+      vertical-align: top;
+      margin-left: 4px;
+      font-family: "Segoe-Regular";
+      background-color: $navigation-bar;
+      font-size: 14px;
+      .subtask-head-container {
+        width: 90%;
+        background-color: $top-header-icon;
+        padding-right: 10px;
+        margin: 10px;
+        .subtask-head-element {
+          padding: 18px 0px 10px 0;
+          .fa-circle,
+          .fa-check-circle {
+            color: $top-header;
+            padding-right: 17px;
+            font-size: 18px;
+            margin-left: 15px;
+            margin-top: 2px;
+          }
+          .task-heading {
+            width: 75%;
+            display: inline-block;
+            font-size: 16px;
+            margin: 0;
+            vertical-align: top;
+          }
+          .fa-star {
+            font-size: 13px;
+            margin-bottom: 16px;
+            margin-right: 5px;
+          }
+        }
+        .subtask-input-container {
+          width: 100%;
+          .add-step-button {
+            margin-bottom: 10px;
+            font-size: 11px;
+          }
+          .subtask-input {
+            border: none;
+            width: 71%;
+            padding-top: 12px;
+            padding-bottom: 12px;
+          }
+          .subtask-input:focus {
+            outline: none;
+          }
+          .fa-circle,
+          .fa-plus {
+            margin-left: 18px;
+            margin-right: 15px;
+            font-size: 14px;
+            color: $top-header;
+          }
+        }
+        .subtask-list-container {
+          list-style-type: none;
+          border: none;
+          margin: 10px;
+          width: 95%;
+          .subtask-element {
+            .subtask-content {
+              display: inline-block;
+              width: 74%;
+              vertical-align: bottom;
+              padding-bottom: 10px;
+              font-size: 13px;
+              vertical-align: top;
+              margin-top: 10px;
+            }
+            .fa-circle {
+              font-size: 15px;
+              padding: 12px 15px 12px 7px;
+              vertical-align: top;
+              margin-right: 4px;
+            }
+            .fa-times {
+              padding: 8px;
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+      .other-option {
+        width: 90%;
+        margin: 10px;
+        background-color: $top-header-icon;
+        margin-top: 10px;
+        padding: 15px 10px 15px 0;
+        color: grey;
+        margin-left: 12x;
+        border: 1px solid $top-search-bar;
+        .fa-sun {
+          margin-left: 18px;
+          margin-right: 13px;
+        }
+      }
+      .option-container {
+        width: 93%;
+        margin: 10px;
+        color: grey;
+        border-top: 1px solid $top-search-bar;
+        border-left: 1px solid $top-search-bar;
+        border-right: 1px solid $top-search-bar;
+        .far {
+          margin-left: 18px;
+          margin-right: 13px;
+        }
+        .option-element {
+          width: 96%;
+          background-color: $top-header-icon;
+          padding: 15px 10px 15px 0;
+          border-bottom: 1px solid $top-search-bar;
+        }
+      }
+      .textarea-option {
+        margin: 10px;
+        .textarea {
+          border: none;
+          padding: 15px;
+          border: 1px solid $top-search-bar;
+        }
+        .textarea::placeholder {
+          font-family: "Segoe-Regular";
+          font-style: italic;
+        }
+      }
+    }
+  }
+}

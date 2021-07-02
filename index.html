@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>To Do</title>
+  <link rel="icon" href="assets/images/todo.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/all.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="grid-icon"><i class="fas fa-th"></i></div>
+      <div class="to-do-title"><span>To Do</span></div>
+      <div class="search-bar-div">
+        <div class="search-bar">
+          <div class="search-icon"><i class="fas fa-search"></i></div>
+        </div>
+      </div>
+      <div class="settings-icon"><i class="fas fa-cog"></i></div>
+      <div class="question-icon"><i class="fas fa-question"></i></div>
+      <div class="megaphone-icon"><i class="fas fa-bullhorn"></i></div>
+      <div class="profile-icon"><i class="fas fa-2x fa-user-circle"></i></i></div>
+    </div>
+    <div class="body-container">
+      <div class="navigation-container">
+        <div class="navigation-header">
+          <div class="left-arrow-icon"><i class="fas fa-chevron-left"></i></div>
+        </div>
+        <div class="navBarList">
+            <ul id="navigation-menu-list" class="navigation-menu-list" onclick="clickEvent(event, 'navBarMenu')"></ul>
+          <div class="input-container">
+            <div class="plus-icon"><i class="fas fa-plus"></i></div>
+            <div class="input-box">
+              <input type="text" placeholder="New list" class="new-nav-menu-input" id="new-nav-menu-input"
+                onkeypress="enterKeyEvent(event)">
+            </div>
+          </div>
+          <div class="new-folder-icon"><i class="fas fa-folder-plus"></i></div>
+        </div>
+        <div class="navigation-footer">
+          <div class="mail-icon"><i class="far fa-envelope"></i></div>
+          <div class="calendar-icon"><i class="fas fa-calendar"></i></div>
+          <div class="user-friend-icon"><i class="fas fa-user-friends"></i></div>
+          <div class="paperclip-icon"><i class="fas fa-paperclip"></i></div>
+          <div class="tick-icon"><i class="fas fa-check"></i></div>
+        </div>
+      </div>
+      <div class="task-container" id="task-container">
+        <h3 id="menu-head" class="menu-head"></h3>
+        <div class="dots-icon"><i class="fas fa-ellipsis-h"></i></div>
+        <h4 id="current-date" class="current-date"></h4>
+        <div class="task-input-container">
+          <i class="fas fa-plus" id="plus-icon"></i>
+          <input type="text" class="task-inputbox" id="task-input" placeholder="Add a task"
+            onkeypress="enterKeyEvent(event)" onclick="clickEvent(event, 'addTask')">
+          <div class="add-button" id="add-button">ADD</div>
+        </div>
+        <ul id="new-task-list" class="new-task-list" onclick="clickEvent(event, 'tasks')"></ul>
+      </div>
+      <div id="subtask-container" class="subtask-container">
+        <div class="subtask-head-container">
+          <div id="subtask-header" class="subtask-head-element">
+          </div>
+          <ul id="subtask-list" class="subtask-list-container"></ul>
+          <div class="subtask-input-container">
+            <i id="subtask-plus-icon" class="fas fa-plus"></i>
+            <input id="subtask-input" class="subtask-input" placeholder="Add step" onkeypress="enterKeyEvent(event)"
+            onclick="clickEvent(event,'addSubTask')">
+            <div class="hide-add-button add-step-button" id="add-step-button">ADD</div>
+          </div>
+        </div>
+        <div class="other-option">
+          <i class="far fa-sun"></i>
+          <span id="add-to-my-day">Added to my day</span>
+        </div>
+        <div class="option-container">
+          <div class="option-element">
+            <i class="far fa-bell"></i>
+            <span>Remaind me</span>
+          </div>
+          <div class="option-element">
+            <i class="far fa-calendar-alt"></i>
+            <span>Add due date</span>
+          </div>
+          <div class="option-element">
+            <i class="far fa-clock"></i>
+            <span>Repeat</span>
+          </div>
+        </div>
+        <div class="other-option">
+          <i class="far fa-sun"></i>
+          <span>Pick a category</span>
+        </div>
+        <div class="other-option">
+          <i class="far fa-sun"></i>
+          <span>Add file</span>
+        </div>
+      </div>
+    </div>
+    </div>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

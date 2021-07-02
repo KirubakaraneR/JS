@@ -1,0 +1,22 @@
+@mixin top-header-properties {
+  display: inline-block;
+  vertical-align: top;
+  padding: 15px;
+}
+
+@mixin top-header-transparent-properties {
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $top-header-icon;
+}
+
+@mixin navBar-transparent-properties {
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $navBar-icon;
+}
+
+@mixin navBar-footer {
+  display: inline-block;
+  padding: 11px 17px 11px 17px;
+}
